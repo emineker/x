@@ -65,3 +65,6 @@
 	merge = refs/heads/master
 [github]
 	user = emineker
+[user]
+	email = emineker@bil.omu.edu.tr
+	name = Emin Eker
