@@ -7,7 +7,7 @@
 # 	man x
 
 X_EMAIL='emineker@bil.omu.edu.tr'
-X_NAME='emineker'
+X_NAME='Emin Eker'
 
 . ${X_HOME:=$HOME}/lib/x
 
