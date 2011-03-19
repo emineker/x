@@ -1,5 +1,26 @@
 # Kişisel Çalışma Notları
 
-## AÇIKLAMA
+## mysql ile veri tabanı taşıma işlemleri
 
-TODO
+herhangi bir veritabanını bir başka veritabanına taşıma
+
+- veritabanını sql dosyalarına aktarma
+
+	$ mysqldump -u root -p[parola] [foo] > bar.sql
+
+bu şekilde veri tabanında foo isimli veri tabanını bar.sql dosyasına taşıdık
+
+örnek olarak
+
+	$ mysqldump -u root -p wordpress > wordpress.sql
+
+- sql dosyasını veritabanına yükleme
+
+	$ mysql -u root -p[parola] [foo_new] < bar.sql
+
+örnek olarak
+
+	$ mysqldump -u root -p foo < wordpress.sql
+
+NOT: sql dosyasını yeni (foo) veri tabanına yüklemeden önce
+yüklenecek veritabanı (foo) oluşturulmalıdır.
