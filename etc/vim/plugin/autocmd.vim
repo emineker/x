@@ -74,7 +74,7 @@ augroup END
 
 augroup sgmledit
 	" Sgml documentation style for FreeBSD.
-	autocmd FileType html,sgml,xml setlocal sw=2 sts=2 fo=tcq2wa
+	autocmd FileType html,sgml,xml setlocal sw=2 sts=2 "fo=tcq2wa
 augroup END
 
 augroup texedit
