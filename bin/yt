@@ -1,0 +1,28 @@
+#!/bin/bash
+
+use std
+
+address="$1"
+if [ -z "$address" ]; then
+	ask "Youtube adresini giriniz" "" must-non-empty
+	address="$REPLY"
+fi
+
+regex='v=(.*)'
+if [[ $? -eq 0 ]]; then
+	if [[ $address =~ $regex ]]; then
+		video_id=${BASH_REMATCH[1]}
+		video_id=$(echo $video_id | cut -d'&' -f1)
+		video_title="$(youtube-dl --get-title $address)"
+		video_filename="$(youtube-dl --get-filename $address)"
+		youtube-dl $address
+
+		ffmpeg -i $video_filename /tmp/"$video_title".wav
+		lame /tmp/"$video_title".wav "$video_title".mp3
+		rm $video_filename /tmp/"$video_title".wav
+
+		echo "MP3 dosyanız hazır."
+	else
+		echo "hata: Lütfen YouTube adresini kontrol edin ve sonra tekrar deneyin..."
+	fi
+fi
