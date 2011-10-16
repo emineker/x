@@ -73,10 +73,13 @@ conffiles=$(
 	echo $profilefile
 ) 2>/dev/null
 
+echo "tmux önce -- TERM: $TERM COLORS: $(tput colors)" >~/bilgi
 # çoğullayıcıyı başlat
 case "$screen" in
 tmux|*/tmux)
+	xrdb -merge ~/etc/xresources/xterm ||:
 	if ! anyattr dumb; then
+		echo "tmux sonra -- TERM: $TERM COLORS: $(tput colors)" >>~/bilgi
 		# 256 renk desteği
 		opts="-2"
 		sessionfile=$confdir/session-256color
