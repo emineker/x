@@ -65,7 +65,7 @@ if __name__ == '__main__':
         text = raw_input('-> ')
         if text in where.keys():
             lang = text
-            # print '\n   %s\n' % where[text]
+            print '\n   %s\n' % where[text]
             continue
 
         print '-> %s\n' % translate(text, where[lang], to=lang)
