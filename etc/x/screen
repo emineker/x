@@ -76,7 +76,6 @@ conffiles=$(
 # çoğullayıcıyı başlat
 case "$screen" in
 tmux|*/tmux)
-	xrdb -merge ~/etc/xresources/xterm ||:
 	if ! anyattr dumb; then
 		# 256 renk desteği
 		opts="-2"

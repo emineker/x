@@ -1,2 +1,2 @@
 # Kişisel Ayarlar
-xrdb -merge ~/etc/xresources/xterm
+#xrdb -merge ~/etc/xresources/xterm
