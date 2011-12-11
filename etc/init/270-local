@@ -1,2 +1,5 @@
 # Kişisel Ayarlar
 #xrdb -merge ~/etc/xresources/xterm
+
+# Youtube'den ses dosyası indir.
+alias yt2mp3="youtube-dl -o '%(title)s.%(ext)s' --extract-audio --audio-format=mp3"
