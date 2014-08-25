@@ -1,2 +1,5 @@
 # Kişisel Ayarlar
 #xrdb -merge ~/etc/xresources/xterm
+
+export SRCDIR=/usr/local/src
+export GOPATH=${SRCDIR%/*}
