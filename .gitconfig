@@ -68,3 +68,5 @@
 [user]
 	email = emineker@gmail.com
 	name = emin eker
+[push]
+	default = matching
