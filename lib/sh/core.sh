@@ -212,22 +212,22 @@ setattr() {
 exportgit() {
 	local name email user token
 
-	if [ -z "$GIT_AUTHOR_NAME" ]; then
-		name="$(git config --global --get user.name 2>/dev/null ||:)"
-		[ -n "$name" ] || name="$X_NAME"
-		[ -z "$name" ] || export GIT_AUTHOR_NAME="$name"
-	fi
-	if [ -z "$GIT_AUTHOR_EMAIL" ]; then
-		email="$(git config --global --get user.email 2>/dev/null ||:)"
-		[ -n "$email" ] || email="$X_EMAIL"
-		[ -z "$email" ] || export GIT_AUTHOR_EMAIL="$email"
-	fi
-	if [ -z "$GIT_COMMITTER_NAME" ] && [ -n "$GIT_AUTHOR_NAME" ]; then
-		export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-	fi
-	if [ -z "$GIT_COMMITTER_EMAIL" ] && [ -n "$GIT_AUTHOR_EMAIL" ]; then
-		export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-	fi
+	# if [ -z "$GIT_AUTHOR_NAME" ]; then
+	# 	name="$(git config --global --get user.name 2>/dev/null ||:)"
+	# 	[ -n "$name" ] || name="$X_NAME"
+	# 	[ -z "$name" ] || export GIT_AUTHOR_NAME="$name"
+	# fi
+	# if [ -z "$GIT_AUTHOR_EMAIL" ]; then
+	# 	email="$(git config --global --get user.email 2>/dev/null ||:)"
+	# 	[ -n "$email" ] || email="$X_EMAIL"
+	# 	[ -z "$email" ] || export GIT_AUTHOR_EMAIL="$email"
+	# fi
+	# if [ -z "$GIT_COMMITTER_NAME" ] && [ -n "$GIT_AUTHOR_NAME" ]; then
+	# 	export GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+	# fi
+	# if [ -z "$GIT_COMMITTER_EMAIL" ] && [ -n "$GIT_AUTHOR_EMAIL" ]; then
+	# 	export GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+	# fi
 	if [ -z "$GITHUB_USER" ]; then
 		user="$(git  config --global --get github.user  2>/dev/null ||:)"
 		[ -n "$user" ] || user=${GIT_AUTHOR_EMAIL%%@*}
